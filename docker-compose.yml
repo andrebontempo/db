@@ -6,7 +6,7 @@ services:
     container_name: cloudbeaver
     restart: unless-stopped
     volumes:
-      - /opt/docker/db:/opt/cloudbeaver/workspace
+      - ./data:/opt/cloudbeaver/workspace
     networks:
       - proxy
 
