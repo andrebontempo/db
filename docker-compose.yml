@@ -5,6 +5,10 @@ services:
     image: dbgate/dbgate:latest
     container_name: dbgate
     restart: unless-stopped
+    environment:
+      BASIC_AUTH: "true"
+      LOGIN: ${DBGATE_USER}
+      PASSWORD: ${DBGATE_PASSWORD}
     volumes:
       - ./data:/root/.dbgate
     networks:
