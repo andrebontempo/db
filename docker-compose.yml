@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  cloudbeaver:
+    image: dbeaver/cloudbeaver:latest
+    container_name: cloudbeaver
+    restart: unless-stopped
+    volumes:
+      - /opt/docker/db:/opt/cloudbeaver/workspace
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
